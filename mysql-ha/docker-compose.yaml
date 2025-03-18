@@ -8,6 +8,7 @@ services:
       MYSQL_REPLICATION_USER: replica
       MYSQL_REPLICATION_PASSWORD: replica
       MYSQL_DATABASE: test
+      TZ: Asia/Seoul
     ports:
       - "3306:3306"
     volumes:
@@ -19,6 +20,7 @@ services:
     container_name: mysql-slave
     environment:
       MYSQL_ROOT_PASSWORD: admin
+      TZ: Asia/Seoul
     ports:
       - "3307:3306"
     depends_on:
